@@ -1,0 +1,90 @@
+
+
+$bg2color: #343434;
+$bgcolor: rgb(0, 0, 0, 0.65);
+$text-color: #fff;
+
+.logout {
+    color: $text-color;
+}
+
+* {
+    margin: 0%;
+}
+
+.header {
+    background-color: rgb(24, 20, 20);
+    height: 90px;
+    display: flex;
+    position:fixed;
+    width: 100%;
+
+}
+
+.logo {
+    height: 30px;
+}
+
+.logout {
+    margin-top: 25px;
+    color: aliceblue;
+    margin-left: 250px;
+
+}
+
+.grid {
+    color: aliceblue;
+    display: flex;
+    margin-top: 25px;
+    margin-left: 150px;
+
+}
+
+.grid-item {
+    margin-left: 100px;
+}
+
+.hbody {
+    background-color: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+
+}
+
+p {
+    color: $text-color;
+    margin-left: 20px;
+    padding-top: 10px;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.imgrid {
+    display: flex;
+}
+
+.imgrid-item {
+
+    margin: 20px;
+}
+
+.img {
+    height: 200px;
+    width: 200px;
+    margin: 0%;
+    row-gap: 0;
+}
+
+
+.scrollbar{
+    .row{
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+        row-gap: 5px;
+    }
+}

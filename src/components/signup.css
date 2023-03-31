@@ -1,0 +1,104 @@
+.container{
+    background-image: url('https://i.ibb.co/vXqDmnh/background.jpg');
+    height: 100%;
+    position: fixed;
+	align-items: center;
+    width:100%;
+}
+
+*{
+    margin: 0px;
+}
+.body{
+    position: relative;
+	z-index: 2;
+	width: 400px;
+	/* background: rgb(0, 0, 0, 0.65); */
+    background-color: rgb(0, 0, 0, 0.65);
+	margin: 0 auto;
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	text-align: left;
+	padding: 10px;
+}
+.sign{
+    justify-content: center;
+    padding-left: 80px;
+    color: white;
+}
+
+.input{
+    margin-bottom: 30px;
+    width: 300px;
+	height: 30px;
+	border-radius: 5px;
+	border: none;
+	padding: 10px;
+	font-size: inherit;
+    padding-left: 30px;
+}
+.logo {
+	position: relative;
+	z-index: 2;
+    margin-top: 20px;
+    margin-left: 20px;
+	height: 70px;
+}
+
+h1{
+	color: #fff;
+}
+
+.formm h1 {
+	margin-bottom: 20px;
+}
+.formm {
+	width: 100%;
+	margin-bottom: 40px;
+    padding: 10px;
+}
+
+input[type=email] {
+	background: #343434;
+}
+
+input[type=password] {
+	background: #343434;
+}
+input[type=text] {
+	background: #343434;
+}
+.btn{
+    width: 300px;
+	height: 50px;
+	border-radius: 5px;
+	background: red;
+	color: #fff;
+	font-size: inherit;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+}
+.signup {
+	width: 100%;
+	display: flex;
+    color: #fff;
+    padding-top: 10px;
+	align-items: center;
+	justify-content: flex-start;
+}
+.signup p {
+	margin-right: 5px;
+}
+
+.sign{
+    color: #fff;
+    margin-left: 50px;
+}
+.error{
+	color: #e4dbdb;
+}

@@ -1,0 +1,108 @@
+$bgcolor:  rgb(0, 0, 0, 0.65);
+$text-color: #fff;
+$bg2color:#343434;
+$shadow:0 1px 0 rgba(0, 0, 0, 0.45);
+
+.container{
+    background-image: url('https://i.ibb.co/vXqDmnh/background.jpg');
+    height: 100%;
+    position: fixed;
+	align-items: center;
+    width:100%;
+}
+*{
+    margin: 0px;
+}
+.body{
+    position: relative;
+	z-index: 2;
+	width: 400px;
+	/* background: rgb(0, 0, 0, 0.65); */
+    background-color:$bgcolor;
+	margin: 0 auto;
+	/* display: flex; */
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	text-align: left;
+	padding: 10px;
+}
+.sign{
+    justify-content: center;
+    padding-left: 80px;
+    color: $text-color;
+}
+.input{
+    margin-bottom: 30px;
+    width: 300px;
+	height: 30px;
+	border-radius: 5px;
+	border: none;
+	padding: 10px;
+	font-size: inherit;
+    padding-left: 30px;
+}
+.logo {
+	position: relative;
+	z-index: 2;
+    margin-top: 20px;
+    margin-left: 20px;
+	height: 70px;
+	width: 100px;
+}
+h1{
+	color: $text-color;
+}
+.formm h1 {
+	margin-bottom: 20px;
+}
+.formm {
+	width: 100%;
+    padding: 10px;
+}
+input[type=email] {
+	background: $bg2color;
+}
+
+input[type=password] {
+	background: $bg2color;
+}
+input[type=text] {
+	background: $bg2color;
+}
+.btn{
+    width: 340px;
+	height: 50px;
+	border-radius: 5px;
+	background: red;
+	color: $text-color;
+	font-size: inherit;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	box-shadow: $shadow;
+}
+.signup {
+	width: 100%;
+	display: flex;
+    color: $text-color;
+    padding-top: 10px;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.signup p {
+	margin-right: 5px;
+}
+
+.sign{
+    color: $text-color;
+    margin-left: 50px;
+}
+.error{
+	color: rgb(211, 201, 201);
+    margin: 0%;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
