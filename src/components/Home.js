@@ -129,7 +129,6 @@ function Home() {
     "title": "Avatar: The Way of Water",
     "backdrop_path": "/ovM06PdF3M8wvKb06i4sjW3xoww.jpg",
     "popularity": 956.637,
-    "vote_count": 5748,
     "video": false,
     "vote_average": 7.7,
     "__v": 0
@@ -163,7 +162,6 @@ function Home() {
     "title": "Little Dixie",
     "backdrop_path": "/k4V6EvpcOsu8CX10JD0H53lFXLq.jpg",
     "popularity": 918.963,
-    "vote_count": 77,
     "video": false,
     "vote_average": 6,
     "__v": 0
@@ -188,7 +186,6 @@ function Home() {
     "title": "Lord of the Streets",
     "backdrop_path": "/32GH8Mi4GmTPIQyd6IW1FFrHWrj.jpg",
     "popularity": 776.661,
-    "vote_count": 44,
     "video": false,
     "vote_average": 5.4,
     "__v": 0
