@@ -38,7 +38,10 @@ const SuccessAlert = () => (
 const SigninForm = () => {
   const navigate = useNavigate();
   const handleSubmit = async (values, { setSubmitting }) => {
-    try {
+    try 
+    
+    
+    {
       if(values){
       const data = {
         email: values.email,

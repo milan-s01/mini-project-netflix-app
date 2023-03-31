@@ -10,8 +10,6 @@ import SignupForm from './components/Signin';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
 
-
-
 function App() {
   return (
     <div>
