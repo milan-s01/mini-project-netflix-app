@@ -5,6 +5,10 @@ import "./home.scss";
 import LogoutIcon from '@mui/icons-material/Logout';
 import axios from 'axios';
 import { apiurl } from '../config/apiurl';
+import Navbar from './navbar/Navbar';
+import Featured from './featured/Featured';
+import Genres from './genres/Genres';
+import ListMovie from './ListMovie/ListMovie';
 function Home() {
   const [movies, setMovies] = useState([]);
   const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
@@ -15,10 +19,10 @@ function Home() {
   // }, []);
 
   const [genres, setGenres] = useState([]);
-  
+
   const handleSubmit = async (genre) => {
     try {
-      const response = await axios.post(apiurl.genreurl,{ genre });
+      const response = await axios.post(apiurl.genreurl, { genre });
       setGenres(response.data.genres);
     } catch (error) {
       console.error(error);
@@ -49,37 +53,16 @@ function Home() {
     };
     fetchGenres();
   }, []);
-  
+
 
   return (
     <div>
       <div className='header'>
-        <img src='https://i.ibb.co/r5krrdz/logo.png' className='logo'></img>
-        <div className='grid'>
-          <div className='grid-item'><button>Home</button></div>
-          <div className='grid-item'>Movies</div>
-
-          <div className='grid-item'><button onClick={() => handleSubmit()}>Genres </button></div>
-
-          <div className='grid-item'>favourites</div>
-          <div className='grid-item'>My list</div>
-        </div>
-        <Link to="/" className='logout'><LogoutIcon></LogoutIcon></Link>
+        <Navbar />
       </div>
       <div className='hbody'>
-        <p>Popular on netflix</p>
-        <div className='scrollbar'>
-            <div className='movie-list'>
-              {movies.map((movie) => (
-                <div key={movie.id} className='movie'>
-                  <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie"/>
-                  {/* <h3>{movie.title}</h3>
-                  // <p>{movie.overview}</p> */}
-                  
-                </div>
-              ))}
-            </div>
-        </div>
+        <Featured></Featured>
+        <ListMovie></ListMovie>
       </div>
     </div>
   )

@@ -1,29 +1,12 @@
-const handleSubmit = async (values, { setSubmitting }) => {
-  try {
-    const response = await axios.post('http://localhost:4000/users/login', {
-      email: values.email,
-      password: values.password,
-    })
-    if (response.status === 200) {
-      const token = response.data.token;
-      localStorage.setItem('jwtToken', token);
-      navigate('/home');
-    }
-  } catch (error) {
-    console.log('error', error);
-    toast.error('invalid credentials');
-  }
-  setSubmitting(false);
-};
-
-
-import axios from 'axios';
-
-const instance = axios.create({
-  baseURL: 'http://localhost:4000',
-  headers: {
-    Authorization: `Bearer ${localStorage.getItem('jwtToken')}`,
-  },
-});
-
-export default instance;
+<div className='scrollbar'>
+            <div className='movie-list'>
+              {movies.map((movie) => (
+                <div key={movie.id} className='movie'>
+                  <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie"/>
+                  {/* <h3>{movie.title}</h3>
+                  // <p>{movie.overview}</p> */}
+                  
+                </div>
+              ))}
+            </div>
+        </div>

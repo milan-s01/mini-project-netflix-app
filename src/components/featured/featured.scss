@@ -1,0 +1,53 @@
+.featured{
+    height:80vh;
+    position: relative;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .info{
+        width: 35%;
+        position: absolute;
+        bottom: 10%;
+        display: flex;
+        flex-direction: column;
+        color: white;
+
+      
+    }
+    .desc{
+        margin-left: 50px;
+    }
+
+    .buttons{
+        display: flex;
+        margin: 20px 40px ;
+        button{
+            padding: 10px 20px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+
+            &.play{
+                background-color: white;
+                color:black;
+            }
+
+            &.more{
+                background-color:gray;
+                color:white;
+            }
+            span{
+                margin-left: 4px;
+            }
+        }
+    }
+
+}
