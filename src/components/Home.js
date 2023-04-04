@@ -7,8 +7,8 @@ import axios from 'axios';
 import { apiurl } from '../config/apiurl';
 import Navbar from './navbar/Navbar';
 import Featured from './featured/Featured';
-import Genres from './genres/Genres';
 import ListMovie from './ListMovie/ListMovie';
+import Listcard from './listcard/Listcard';
 function Home() {
   const [movies, setMovies] = useState([]);
   const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
@@ -61,8 +61,11 @@ function Home() {
         <Navbar />
       </div>
       <div className='hbody'>
-        <Featured></Featured>
+        <Featured type="series"></Featured>
         <ListMovie></ListMovie>
+        <ListMovie></ListMovie>
+        <ListMovie></ListMovie>
+        <Listcard></Listcard>
       </div>
     </div>
   )

@@ -95,9 +95,6 @@ p {
 .movie-list{
     display: flex;
     gap: 10px;
-    // flex-wrap: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
 }
 
 .scrollbar{

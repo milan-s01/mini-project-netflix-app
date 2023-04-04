@@ -11,6 +11,7 @@ import {
     Link
 } from 'react-router-dom';
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 
 const validationSchema = Yup.object().shape({
@@ -38,6 +39,7 @@ const SuccessAlert = () => (
 );
 
 const SignupForm = () => {
+    const navigate = useNavigate();
     const handleSubmit = async (values, { setSubmitting }) => {
         try {
             const response = await axios.post('http://localhost:4000/users/', {
@@ -48,7 +50,8 @@ const SignupForm = () => {
             toast.success('Sign up successful');
         } catch (error) {
             console.log('error', error);
-            toast.error('user already registered')
+            toast.error('user already registered');
+            navigate('/home')
         }
         setSubmitting(false);
     };
