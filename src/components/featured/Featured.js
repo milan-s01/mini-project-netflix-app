@@ -9,8 +9,7 @@ function Featured(type) {
     const [genres, setGenres] = useState([]);
     const url = "http://localhost:4000/movies/genre";
 
-    useEffect(() => {
-        debugger
+    useEffect(() => { 
         console.log(genres)
         let token = sessionStorage.getItem("jwtToken");
         axios.get(url , {

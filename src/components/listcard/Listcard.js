@@ -8,7 +8,7 @@ function Listcard() {
     const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
 
     useEffect(() => {
-        debugger
+        // debugger
         console.log(movies)
         let token = sessionStorage.getItem("jwtToken");
         axios.get(url, {

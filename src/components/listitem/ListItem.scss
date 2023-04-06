@@ -1,0 +1,36 @@
+.listitem {
+    cursor: pointer;
+    margin-right: 5px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .movie-list{
+        gap: 24px;
+    }
+
+}
+
+.movie {
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+        transition: transform 150ms ease-in;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+
+
+
+// .movie{
+//     cursor: pointer;
+// }

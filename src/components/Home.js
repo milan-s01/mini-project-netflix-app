@@ -9,6 +9,7 @@ import Navbar from './navbar/Navbar';
 import Featured from './featured/Featured';
 import ListMovie from './ListMovie/ListMovie';
 import Listcard from './listcard/Listcard';
+import ListMovie2 from './ListMovie/ListMovie2';
 function Home() {
   const [movies, setMovies] = useState([]);
   const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
@@ -29,7 +30,7 @@ function Home() {
     }
   }
   useEffect(() => {
-    debugger
+    // debugger
     console.log(movies)
     let token = sessionStorage.getItem("jwtToken");
     axios.get(url, {
@@ -56,14 +57,12 @@ function Home() {
 
 
   return (
-    <div>
-      <div className='header'>
+    <div className='main'>
         <Navbar />
-      </div>
       <div className='hbody'>
         <Featured type="series"></Featured>
         <ListMovie></ListMovie>
-        <ListMovie></ListMovie>
+        <ListMovie2></ListMovie2>
         <ListMovie></ListMovie>
         <Listcard></Listcard>
       </div>
