@@ -9,7 +9,7 @@ function Moviedetails() {
     let { id } = useParams();
     const [movie, setMovie] = useState({});
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=03732a642aba67864e7018998055639d&language=en-US`;
-
+    
     useEffect(() => {
         console.log(id)
         console.log(url)

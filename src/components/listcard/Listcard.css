@@ -1,0 +1,39 @@
+.movielist {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  margin-top: 30px;
+  gap: 24px;
+}
+
+.mov {
+  margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .movielist {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px;
+    gap: 24px;
+  }
+  .mov {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movielist {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .mov {
+    margin: 10px;
+  }
+}
+/*# sourceMappingURL=Listcard.css.map */

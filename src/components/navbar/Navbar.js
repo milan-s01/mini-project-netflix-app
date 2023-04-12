@@ -3,11 +3,53 @@ import "./navbar.scss";
 import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState, useEffect } from 'react';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar() {
+
+function Navbar(type) {
+  const [genres, setGenres] = useState([]);
+  const url = "http://localhost:4000/movies/genre";
+  const movieurl = "http://localhost:4000/movies?page=2&pageSize=10&orderBy=release_date";
+  const [display, setDisplay] = useState([]);
+  const[showing,setShowing] = useState(false);
+  const [showOptions, setShowOptions] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClickSearchIcon = () => {
+    setShowOptions(!showOptions);
+  };
+
+  useEffect(() => {
+    console.log(genres)
+    let token = sessionStorage.getItem("jwtToken");
+    axios.get(url, {
+      headers: {
+        "Authorization": `x-auth-token ${token}`
+      }
+    }).then(response => {
+      setGenres(response.data);
+    }).catch(error => console.log(error));
+  }, []);
+
+  const handleclickGenre = (e) => {
+    let genreId = e.target.value;
+    navigate(`/genre/${genreId}`);
+    let token = sessionStorage.getItem("jwtToken");
+    setShowing(true);
+    let randomQuery = Math.random().toString(36).substring(7); // generate a random string
+    axios.get(`${movieurl}&genre=${genreId}&${randomQuery}`, {
+      headers: {
+        "Authorization": `x-auth-token ${token}`
+      }
+    }).then(response => {
+      setDisplay(response.data.docs);
+    }).catch(error => console.log(error));
+  };
+
+ 
+
   return (
     <div className='navbar'>
       <div className='cntr'>
@@ -17,12 +59,40 @@ function Navbar() {
           <span>series</span>
           <span>Popular</span>
           <span>favourites</span>
+          {type && (
+            <div className='category'>
+              <SearchIcon className='icon' onClick={handleClickSearchIcon} />
+              {showOptions && (
+                <select onChange={handleclickGenre}>
+                  {genres.map((genre) => (
+                    <option key={genre._id} value={genre._id}>
+                      {genre.name}
+                    </option>
+                  ))}
+                </select>
+              )}
+            </div>
+          )}
         </div>
         <div className='right'>
-          <SearchIcon className='icon'></SearchIcon>
           <img src='https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg' className='user'></img>
           <Link to="/" className='logout'><LogoutIcon></LogoutIcon></Link>
         </div>
+
+        {showing && (
+        <div className='results'>
+          <div className='listtem'>
+            <div className='movie-lst'>
+              {Array.isArray(display) && display.map((movie) => (
+                <div key={movie._id}>
+                  <h3>{movie.title}</h3>
+                  <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className='movi'></img>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>)}
+
       </div>
     </div>
   )

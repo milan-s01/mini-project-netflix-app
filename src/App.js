@@ -9,6 +9,8 @@ import SignupForm from './components/Signin';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
 import Moviedetails from './components/moviedetails/Moviedetails';
+import Watch from './components/watch/Watch';
+import Selectgen from './components/selectgen/Selectgen';
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
           <Route path='/' element={<SigninForm />} ></Route>
           <Route path='/Signin' element={<SignupForm />} ></Route>
           <Route path='/movie/:id' element={<Moviedetails></Moviedetails>} ></Route>
+          <Route path='/genre/:id' element={<Selectgen></Selectgen>}></Route>
           <Route path='/Home' element={
             <PrivateRoute>
               <Home />
+              {/* <Watch></Watch> */}
             </PrivateRoute>} ></Route>
         </Routes>
       </Router>

@@ -1,0 +1,33 @@
+.listitem {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.listitem img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.listitem .movie-list {
+  gap: 24px;
+}
+
+.movie {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.movie img {
+  -webkit-transition: -webkit-transform 150ms ease-in;
+  transition: -webkit-transform 150ms ease-in;
+  transition: transform 150ms ease-in;
+  transition: transform 150ms ease-in, -webkit-transform 150ms ease-in;
+}
+
+.movie:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=ListItem.css.map */

@@ -13,24 +13,26 @@ function Featured() {
 
     return (
         <div className='featured'>
+            <img src='https://wallpaper.dog/large/20447047.jpg'></img>
             {isPlaying && (
                 <iframe
                     src={videoUrl}
                     allow='autoplay; encrypted-media'
                     allowFullScreen
-                    className="uvideo"
                     title='video'
                 />
             )}
             {!isPlaying && (
-                <img src='https://wallpaper.dog/large/20447047.jpg'></img>
+                <img
+                    src='http://occ-0-2186-987.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABQ4uguhAxGr-PvcN9Ndge6gj50I8HiUvgyMLY_A5YeEJWn45emsxH0XEW7hvajhcH-F4pyx1bima0V2apju-6QdqNoVNhfkMRM-cnmnn3lzTDlud-xDnzwe_9HvV331IHebsKclJSIA8YaJ0Q44Am17koQMXF52hOZFobFPYYgXBsYyrRxGE5w.webp?r=3c8'
+                    alt='thumbnail'
+                    onClick={handlePlay}
+                />
             )}
-
             <div className='info'>
-                { !isPlaying && (
                 <span className='desc'>
                     Legendary warrior Po teams up with an elite English knight on a global quest to rescue magical weapons, restore his reputation — and save the world! Watch all you want. Jack Black and Rita Ora lend their voices to this epic animated series based on the popular film franchise.
-                </span>)}
+                </span>
                 <div className='buttons'>
                     {!isPlaying && (
                         <button className='play' onClick={handlePlay}>
@@ -38,11 +40,10 @@ function Featured() {
                             <span className='plm'>Play</span>
                         </button>
                     )}
-                    {/* { !isPlaying && (
                     <button className='more'>
                         <InfoIcon />
                         <span>more info</span>
-                    </button>)} */}
+                    </button>
                 </div>
             </div>
         </div>

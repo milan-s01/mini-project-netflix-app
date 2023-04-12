@@ -1,0 +1,25 @@
+.moviedetail {
+  height: 60vh;
+  width: 350px;
+  margin-left: 250px;
+  margin-top: 30px;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+h4 {
+  height: 10px;
+  width: 600px;
+  margin-left: 250px;
+  color: #dadfe4;
+}
+
+h3 {
+  margin-left: 250px;
+  height: 10px;
+  width: 600px;
+}
+/*# sourceMappingURL=moviedetails.css.map */

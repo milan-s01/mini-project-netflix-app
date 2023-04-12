@@ -3,6 +3,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './listmovie.scss';
 import ListItem2 from '../listitem/ListItem2';
+import ListItem3 from '../listitem/ListItem3';
 
 function ListMovie2() {
     const[isMoved,setisMoved]=useState(false);
@@ -23,11 +24,11 @@ function ListMovie2() {
     }
     return (
         <div className='list'>
-            <span className='continue'>Trending Now</span>
+            <span className='continue'>New Releases</span>
             <div className='wrapper'>
                 <ArrowBackIosIcon className='arrow left' onClick={() => handleClick("left")} style={{display: !isMoved && "none"}} ></ArrowBackIosIcon>
                 <div className='lmovie' ref={listRef}>
-                   <ListItem2 ></ListItem2>
+                   <ListItem3></ListItem3>
                 </div>
                 <ArrowForwardIosIcon className='arrow right' onClick={() => handleClick("right")} ></ArrowForwardIosIcon>
             </div>

@@ -1,0 +1,30 @@
+.movielst{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    height: 600px;
+}
+
+.genm{
+    margin: 10px 20px;
+    gap: 20px;
+}
+.movi {
+  
+    cursor: pointer;
+   
+    height: 250px;
+    width: 250px;
+
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.results{
+    
+    background-color: rgb(15, 14, 14);
+    margin-top: 10px;
+    
+}

@@ -5,7 +5,7 @@ import './Listcard.scss';
 
 function Listcard() {
     const [movies, setMovies] = useState([]);
-    const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
+    const url = "http://localhost:4000/movies?page=1&pageSize=10&orderBy=name";
 
     useEffect(() => {
         // debugger
@@ -16,7 +16,7 @@ function Listcard() {
                 "Authorization": `x-auth-token ${token}`
             }
         }).then(response => {
-            setMovies(response.data.results);
+            setMovies(response.data.docs);
         }).catch(error => console.log(error));
     }, []);
     return (

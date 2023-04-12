@@ -1,0 +1,29 @@
+.movielst {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto;
+  height: 600px;
+}
+
+.genm {
+  margin: 10px 20px;
+  gap: 20px;
+}
+
+.movi {
+  cursor: pointer;
+  height: 250px;
+  width: 250px;
+}
+
+.movi:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.results {
+  background-color: #0f0e0e;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=selectgen.css.map */

@@ -14,7 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import { apiurl } from '../config/apiurl';
-import {confign} from './service/authservice';
+import { confign } from './service/authservice';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -38,25 +38,25 @@ const SuccessAlert = () => (
 const SigninForm = () => {
   const navigate = useNavigate();
   const handleSubmit = async (values, { setSubmitting }) => {
-    try 
-    
-    
-    {
-      if(values){
-      const data = {
-        email: values.email,
-        password: values.password
-      }
-      const jwtToken = sessionStorage.getItem('jwtToken');
-      const confign = {
-        headers: { Authorization: `Bearer ${jwtToken}` }
-      }
+    try {
+      debugger
+      if (values) {
+        const data = {
+          email: values.email,
+          password: values.password
+        }
+        const jwtToken = sessionStorage.getItem('jwtToken');
+        console.log(values.email, 'em')
+
+        const confign = {
+          headers: { Authorization: `Bearer ${jwtToken}` }
+        }
         const response = await axios.post(apiurl.loginurl, data, confign);
         if (response.status === 200) {
-              const token = response.data.token;
-              sessionStorage.setItem('jwtToken', token);
-              // localStorage.setItem('jwtToken', token);
-              navigate('/home')
+          const token = response.data.token;
+          sessionStorage.setItem('jwtToken', token);
+          // localStorage.setItem('jwtToken', token);
+          navigate('/home')
         }
       }
     } catch (error) {

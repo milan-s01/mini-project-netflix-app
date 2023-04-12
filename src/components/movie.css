@@ -1,0 +1,11 @@
+.img {
+  height: 350px;
+  width: 300px;
+  overflow-x: auto;
+  margin: 10px;
+}
+
+.scroll {
+  overflow-x: auto;
+}
+/*# sourceMappingURL=movie.css.map */

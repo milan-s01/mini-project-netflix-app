@@ -10,6 +10,9 @@ import Featured from './featured/Featured';
 import ListMovie from './ListMovie/ListMovie';
 import Listcard from './listcard/Listcard';
 import ListMovie2 from './ListMovie/ListMovie2';
+import ListMovie3 from './ListMovie/ListMovie3';
+import Favourites from './favourites/Favourites';
+
 function Home() {
   const [movies, setMovies] = useState([]);
   const url = "https://api.themoviedb.org/3/movie/popular?api_key=03732a642aba67864e7018998055639d&language=en-US&page=1";
@@ -62,8 +65,9 @@ function Home() {
       <div className='hbody'>
         <Featured type="series"></Featured>
         <ListMovie></ListMovie>
+        {/* <Favourites favourites={Favourites}  ></Favourites> */}
         <ListMovie2></ListMovie2>
-        <ListMovie></ListMovie>
+       <ListMovie3></ListMovie3>
         <Listcard></Listcard>
       </div>
     </div>

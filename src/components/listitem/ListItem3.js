@@ -3,15 +3,14 @@ import { useState, useEffect } from 'react';
 import './ListItem.scss';
 import axios from 'axios';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import AddIcon from '@mui/icons-material/Add';
-import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import { Link } from 'react-router-dom';
 
-function ListItem() {
+function ListItem3() {
     const [movies, setMovies] = useState([]);
-    const url = "http://localhost:4000/movies?page=1&pageSize=10&orderBy=voting";
+    const url = "http://localhost:4000/movies?page=1&pageSize=10&orderBy=release_date";
 
     useEffect(() => {
+        // debugger
         console.log(movies)
         let token = sessionStorage.getItem("jwtToken");
         axios.get(url, {
@@ -29,18 +28,17 @@ function ListItem() {
                     <div key={movie.id} className='movie'>
                         <Link to={`/movie/${movie.id}`} key={movie.id} className='movie-link'>
                             <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie" />
-                            <div className='icons'>
-                                <PlayArrowIcon></PlayArrowIcon>
-                                <AddIcon></AddIcon>
-                                <ThumbUpAltOutlinedIcon></ThumbUpAltOutlinedIcon>
-                            </div>
                         </Link>
                     </div>
                 ))}
             </div>
+            <div className='iteminfo'>
+                {/* <div className='icons'>
+                    <PlayArrowIcon></PlayArrowIcon>
+                </div> */}
+            </div>
         </div>
-
     )
 }
 
-export default ListItem;
+export default ListItem3;
