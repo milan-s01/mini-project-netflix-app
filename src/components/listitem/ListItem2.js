@@ -11,10 +11,7 @@ function ListItem2(props) {
     const [favorites, setFavorites] = useState([]);
     const url = "http://localhost:4000/movies?page=1&pageSize=10&orderBy=name";
 
-    const addToFavorites = (movies) => {
-        setFavorites([...favorites, movies]);
-      };
-      
+
     useEffect(() => {
         console.log(favorites)
         let token = sessionStorage.getItem("jwtToken");

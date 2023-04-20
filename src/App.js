@@ -11,6 +11,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Moviedetails from './components/moviedetails/Moviedetails';
 import Watch from './components/watch/Watch';
 import Selectgen from './components/selectgen/Selectgen';
+import Favourites from './components/favourites/Favourites';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<SigninForm />} ></Route>
           <Route path='/Signin' element={<SignupForm />} ></Route>
           <Route path='/movie/:id' element={<Moviedetails></Moviedetails>} ></Route>
+          <Route path='/favourites' element={<Favourites></Favourites>}></Route>
           <Route path='/genre/:id' element={<Selectgen></Selectgen>}></Route>
           <Route path='/Home' element={
             <PrivateRoute>

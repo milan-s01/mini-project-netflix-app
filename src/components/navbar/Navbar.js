@@ -14,12 +14,12 @@ function Navbar(type) {
   const movieurl = "http://localhost:4000/movies?page=2&pageSize=10&orderBy=release_date";
   const [display, setDisplay] = useState([]);
   const[showing,setShowing] = useState(false);
-  const [showOptions, setShowOptions] = useState(false);
+  // const [showOptions, setShowOptions] = useState(false);
   const navigate = useNavigate();
 
-  const handleClickSearchIcon = () => {
-    setShowOptions(!showOptions);
-  };
+  // const handleClickSearchIcon = () => {
+  //   setShowOptions(!showOptions);
+  // };
 
   useEffect(() => {
     console.log(genres)
@@ -37,7 +37,7 @@ function Navbar(type) {
     let genreId = e.target.value;
     navigate(`/genre/${genreId}`);
     let token = sessionStorage.getItem("jwtToken");
-    setShowing(true);
+    // setShowing(true);
     let randomQuery = Math.random().toString(36).substring(7); // generate a random string
     axios.get(`${movieurl}&genre=${genreId}&${randomQuery}`, {
       headers: {
@@ -47,9 +47,13 @@ function Navbar(type) {
       setDisplay(response.data.docs);
     }).catch(error => console.log(error));
   };
+ const handleLogout = () =>{
+  sessionStorage.clear();
+ }
 
- 
-
+ const handleClickinfo = () =>{
+   setShowing(true);
+ }
   return (
     <div className='navbar'>
       <div className='cntr'>
@@ -58,11 +62,10 @@ function Navbar(type) {
           <span>Home</span>
           <span>series</span>
           <span>Popular</span>
-          <span>favourites</span>
+          <Link to="/favourites" className='fav'>
+          <span >favourites</span></Link>
           {type && (
             <div className='category'>
-              <SearchIcon className='icon' onClick={handleClickSearchIcon} />
-              {showOptions && (
                 <select onChange={handleclickGenre}>
                   {genres.map((genre) => (
                     <option key={genre._id} value={genre._id}>
@@ -70,16 +73,19 @@ function Navbar(type) {
                     </option>
                   ))}
                 </select>
-              )}
             </div>
           )}
         </div>
         <div className='right'>
-          <img src='https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg' className='user'></img>
-          <Link to="/" className='logout'><LogoutIcon></LogoutIcon></Link>
+          <img src='https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-88wkdmjrorckekha.jpg' className='user' onClick={handleClickinfo}></img>
+          <Link to="/" className='logout'><LogoutIcon onClick={handleLogout}></LogoutIcon></Link>
         </div>
-
         {showing && (
+        <div className='userinfo'>
+         
+        </div>)}
+
+        {/* {showing && (
         <div className='results'>
           <div className='listtem'>
             <div className='movie-lst'>
@@ -91,7 +97,7 @@ function Navbar(type) {
               ))}
             </div>
           </div>
-        </div>)}
+        </div>)} */}
 
       </div>
     </div>

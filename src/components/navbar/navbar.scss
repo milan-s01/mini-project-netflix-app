@@ -13,6 +13,8 @@
 
     display: flex;
     align-items: center;
+    height: 100%;
+    padding: 0px 20px;
     justify-content: space-between;
     background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3)50%);
 }
@@ -64,6 +66,12 @@ input {
 .category {
     margin-top: 40px;
 }
+.fav{
+    color: white;
+    margin-top: 40px;
+    text-decoration:auto;
+    cursor: pointer;
+}
 
 
 
@@ -81,6 +89,15 @@ input {
     }
 }
 
+.userinfo{
+    height:50px;
+    width:100px;
+    background-color: white;
+   position: absolute;
+   margin-left: 1200px;
+   margin-top: 110px;
+
+}
 
 
 

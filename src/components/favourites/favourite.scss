@@ -1,0 +1,16 @@
+.favlist{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 10px;
+    gap: 20px;
+    height: 90vh;
+    
+}
+.pagination{
+    background-color: rgb(214, 211, 211);
+    margin-top: 5px;
+   
+}
+.css-wjh20t-MuiPagination-ul{
+    justify-content: center;
+}
