@@ -29,7 +29,7 @@ function Favourites() {
           </div>
         ))}
       </div>
-      <div className='pagination'>
+      <div className='page'>
         <Pagination count={10} className='pagination' />
       </div>
     </div>

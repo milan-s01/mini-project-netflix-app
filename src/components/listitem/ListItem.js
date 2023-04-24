@@ -47,8 +47,8 @@ function ListItem() {
                             <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie" />
                         </Link>
                         <div className='icons'>
-                            {/* <AddIcon onclick={addFavorites(movie.id)}></AddIcon> */}
-                            <button onClick={() =>addFavorites(movie.id)}>Add to Fav</button>
+                            <AddIcon onclick={addFavorites(movie.id)}></AddIcon> 
+                            {/* <button onClick={() =>addFavorites(movie.id)}>Add to Fav</button> */}
                             <ThumbUpAltOutlinedIcon></ThumbUpAltOutlinedIcon>
                         </div>
                     </div>
