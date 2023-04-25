@@ -1,14 +1,15 @@
 .listitem {
     cursor: pointer;
     margin-right: 5px;
-    color:white;
+    color: white;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .movie-list{
+
+    .movie-list {
         gap: 24px;
     }
 
@@ -19,20 +20,28 @@
     cursor: pointer;
     position: relative;
 
-    img {
-        transition: transform 150ms ease-in;
+    .movie-link {
+        img {
+            transition: transform 150ms ease-in;
+        }
+    }
+
+    .icons {
+        position: fixed;
+        color: rgb(230, 29, 29);
+        background-image: linear-gradient(to bottom right, #000000b4, #00000000);
+        width: 100%;
+        margin-bottom: 10px;
+        z-index: 1;
+        display: none;
+        opacity: 0;
+        transition: opacity 300ms ease-in;
     }
 
     &:hover {
-        img {
-            transform: scale(1.1);
+        .icons {
+            display: block;
+            opacity: 1
         }
     }
-}
-
-
-.icons{
-    position: fixed;
-    color: white;
-    margin-bottom: 10px;
 }

@@ -2,9 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './ListItem.scss';
 import axios from 'axios';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import AddIcon from '@mui/icons-material/Add';
-import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Link } from 'react-router-dom';
 
 function ListItem() {
@@ -43,14 +41,17 @@ function ListItem() {
             <div className='movie-list'>
                 {movies.map((movie) => (
                     <div key={movie.id} className='movie'>
-                        <Link to={`/movie/${movie.id}`} key={movie.id} className='movie-link'>
-                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie" />
-                        </Link>
                         <div className='icons'>
-                            <AddIcon onclick={addFavorites(movie.id)}></AddIcon> 
-                            {/* <button onClick={() =>addFavorites(movie.id)}>Add to Fav</button> */}
-                            <ThumbUpAltOutlinedIcon></ThumbUpAltOutlinedIcon>
+                            {/* <AddIcon onclick={addFavorites(movie.id)}></AddIcon>  */}
+                            <FavoriteIcon
+                                className="fav-icon"
+                                onClick={() => addFavorites(movie.id)}
+                            >
+                            </FavoriteIcon>
                         </div>
+                        <Link to={`/movie/${movie.id}`} key={movie.id} className='movie-link'>
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                        </Link>
                     </div>
                 ))}
             </div>

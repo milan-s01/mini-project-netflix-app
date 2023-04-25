@@ -2,9 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import './ListItem.scss';
 import axios from 'axios';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { Link } from 'react-router-dom';
-import FavoritesList from './FavourList';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 function ListItem2(props) {
     const [movies, setMovies] = useState([]);
@@ -29,19 +28,19 @@ function ListItem2(props) {
             <div className='movie-list'>
                 {movies.map((movie) => (
                     <div key={movie.id} className='movie'>
+                        <div className='icons'>
+                            <FavoriteIcon
+                                className="fav-icon"
+                                // onClick={() => addFavorites(movie.id)}
+                            >
+                            </FavoriteIcon>
+                        </div>
                         <Link to={`/movie/${movie.id}`} key={movie.id} className='movie-link'>
-                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="movie" />
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
                         </Link>
                     </div>
                 ))}
             </div>
-            {/* <div className='iteminfo'>
-                <div className='icons'>
-                    <PlayArrowIcon></PlayArrowIcon>
-                    <button onClick={() => addToFavorites(movies)}>Add to favorites</button>
-                </div>
-            </div>
-            <FavoritesList favorites={favorites} addToFavorites={addToFavorites} /> */}
         </div>
     );
 }

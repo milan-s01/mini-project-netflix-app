@@ -3,10 +3,11 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './favourite.scss';
 import Pagination from '@mui/material/Pagination';
+import { useMemo } from 'react';
 
 function Favourites() {
   const [movies, setMovies] = useState([]);
-  const url = "http://localhost:4000/movies/favourite?page=1&pageSize=2";
+  const url = "http://localhost:4000/movies/favourite?page=1&pageSize=108";
 
   useEffect(() => {
     debugger
